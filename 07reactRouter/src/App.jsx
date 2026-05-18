@@ -1,10 +1,13 @@
 import { useState } from 'react'
-function App() {
-  const [count, setCount] = useState(0)
+import Home from './components/Home/Home'
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
 
+
+function App() {
   return (
     <>
-      
+     
     </>
   )
 }
