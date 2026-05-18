@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Footer() {
     return (
@@ -20,14 +20,18 @@ export default function Footer() {
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">Resources</h2>
                             <ul className="text-gray-500 font-medium">
                                 <li className="mb-4">
-                                    <Link to="/" className="hover:underline">
+                                    <NavLink 
+                                       to={""}  
+                                          className={({ isActive }) => ` hover:underline ${isActive ? "text-orange-700" : "text-gray-500"}`}>
                                         Home
-                                    </Link>
+                                    </NavLink>
                                 </li>
                                 <li>
-                                    <Link to="/about" className="hover:underline">
-                                        About
-                                    </Link>
+                                    <NavLink 
+                                      to={"/about"}
+                                      className={({ isActive }) => ` hover:underline ${isActive ? "text-orange-700" : "text-gray-500"}`}>
+                                      About
+                                    </NavLink>
                                 </li>
                             </ul>
                         </div>
@@ -35,14 +39,15 @@ export default function Footer() {
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">Follow us</h2>
                             <ul className="text-gray-500 font-medium">
                                 <li className="mb-4">
-                                    <a
-                                        href="https://github.com/hiteshchoudhary"
-                                        className="hover:underline"
+                                    <NavLink
+                                        to={"/github"}
+                                        href="https://github.com/yashgwala321"
+                                        className={({ isActive }) => `hover:underline ${isActive ? "text-orange-700" : "text-gray-500"}`}
                                         target="_blank"
                                         rel="noreferrer"
                                     >
                                         Github
-                                    </a>
+                                    </NavLink>
                                 </li>
                                 <li>
                                     <Link to="/" className="hover:underline">
@@ -75,7 +80,7 @@ export default function Footer() {
                         <a href="#" className="hover:underline">
                             Yashgwala
                         </a>
-                        . All Rights Reserved.
+                        . All Rights Reserved.  
                     </span>
                     <div className="flex mt-4 space-x-5 sm:justify-center sm:mt-0">
                         <Link to="#" className="text-gray-500 hover:text-gray-900">
